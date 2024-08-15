@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  /* box-sizing: border-box; */
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.979);
+  color: white;
+}
+.layout {
+  max-width: 1240px;
+  margin: auto;
+}
+header,
+section {
+  padding-inline: 20px;
+}
+
+.logo-container {
+  max-width: 110px;
+}
+
+.logo-container img {
+  width: 100%;
+}
+
+.logo-container h4 {
+  font-size: 12px;
+  margin-top: -28px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar .nav a + a {
+  margin-left: 20px;
+}
+
+.navbar .hamburger-menu {
+  color: inherit;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  font-size: 36px;
+  display: none;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.hero-container h1 {
+  font-size: 5rem;
+  font-family: "New Amsterdam", sans-serif;
+}
+.hero {
+  margin-top: -100px;
+  padding-top: 100px;
+  /* padding-bottom: 100px; */
+  background-image: url(./images/hero-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.hero-shoe {
+  max-width: 600px;
+}
+.hero-shoe img {
+  width: 100%;
+}
+
+.hero-container.md {
+  display: none;
+}
+
+/* How it works */
+.how-it-works {
+  display: block;
+}
+.how-it-works-md {
+  display: none;
+}
+.how-it-works {
+  margin-block: 20px;
+  position: relative;
+}
+.how-it-works h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  flex-shrink: 0.3;
+}
+
+.how-it-works .shoe-info {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.shoe-info img {
+  width: 100%;
+}
+
+.how-it-works .heel-info,
+.how-it-works .front-info,
+.how-it-works .traction-info {
+  max-width: 150px;
+  position: absolute;
+}
+
+.how-it-works .heel-info h1,
+.how-it-works .front-info h1,
+.how-it-works .traction-info h1 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+.how-it-works .heel-info p,
+.how-it-works .front-info p,
+.how-it-works .traction-info p {
+  font-size: 12px;
+}
+
+.how-it-works .heel-info {
+  top: 15%;
+  left: 5%;
+}
+
+.how-it-works .heel-info img {
+  transform: translate(20%, -5%);
+}
+
+.how-it-works .front-info {
+  top: 5%;
+  right: calc(100vw - 94%);
+}
+
+.how-it-works .front-info img {
+  transform: translate(-90%, 50%);
+}
+
+.how-it-works .traction-info {
+  bottom: -5%;
+  left: 25%;
+}
+.how-it-works .traction-info img {
+  transform: translate(40%, 40%);
+}
+@media (min-width: 1024px) {
+  .navbar .nav a {
+    font-size: 24px;
+  }
+  .hero {
+    margin-top: -150px;
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 950px) {
+  /* how it works */
+  .how-it-works h1 {
+    font-size: 1.5rem;
+  }
+  .how-it-works .shoe-info {
+    max-width: 400px;
+  }
+
+  .how-it-works .heel-info h1,
+  .how-it-works .front-info h1,
+  .how-it-works .traction-info h1 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  .how-it-works .heel-info p,
+  .how-it-works .front-info p,
+  .how-it-works .traction-info p {
+    font-size: 10px;
+  }
+
+  .how-it-works .heel-info img,
+  .how-it-works .front-info img,
+  .how-it-works .traction-info img {
+    max-width: 80%;
+  }
+  .how-it-works .front-info {
+    top: 5%;
+    right: calc(100vw - 90%);
+  }
+}
+
+@media (max-width: 770px) {
+  .navbar .nav {
+    display: none;
+  }
+  .navbar .hamburger-menu {
+    display: block;
+  }
+
+  .hero {
+    max-height: 160vh;
+    padding-bottom: 200px;
+    margin-top: 0;
+    padding-top: 20px;
+    background-image: url(./images/md-bg-hero.png);
+    background-position-y: 150%;
+  }
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-container h1 {
+    font-size: 4rem;
+    padding-left: 60px;
+  }
+
+  /* how it works */
+  .how-it-works .shoe-info img {
+    margin-top: 30%;
+    transform: rotate(15deg);
+  }
+  .how-it-works .heel-info img,
+  .how-it-works .front-info img,
+  .how-it-works .traction-info img {
+    max-width: 80%;
+  }
+  .how-it-works .heel-info {
+    top: 25%;
+    left: 5%;
+  }
+  .how-it-works .heel-info img {
+    transform: translate(20%, -5%) rotate(20deg);
+  }
+  .how-it-works .front-info {
+    top: 40px;
+    right: calc(100vw - 90%);
+  }
+
+  .how-it-works .front-info img {
+    transform: translate(-20%, 175%) rotate(130deg);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero {
+    max-height: 100vh;
+    padding-bottom: 200px;
+    background-position-y: 120%;
+  }
+  .hero-container h1 {
+    font-size: 3rem;
+    padding-left: 30px;
+  }
+  /* how it works */
+  .how-it-works {
+    overflow: hidden;
+  }
+  .how-it-works .shoe-info img {
+    margin-top: 50%;
+    margin-bottom: 20%;
+    transform: rotate(25deg);
+  }
+  .how-it-works .heel-info img,
+  .how-it-works .front-info img,
+  .how-it-works .traction-info img {
+    max-width: 80%;
+  }
+  .how-it-works .heel-info {
+    top: 15%;
+    left: 5%;
+  }
+  .how-it-works .heel-info img {
+    transform: translate(-20%, 15%) rotate(70deg);
+  }
+  .how-it-works .front-info {
+    top: 60px;
+    right: 10px;
+  }
+
+  .how-it-works .front-info img {
+    transform: translate(-10%, 175%) rotate(130deg);
+  }
+  .how-it-works .traction-info {
+    bottom: 5px;
+    left: 10%;
+  }
+  .how-it-works .traction-info img {
+    transform: translate(60%, 50%);
+  }
+}
+@media (max-width: 376px) {
+  .hero {
+    max-height: 90vh;
+    padding-bottom: 200px;
+    background-position-y: 100%;
+  }
+  /* how it works */
+
+  .how-it-works {
+    overflow: hidden;
+  }
+  .how-it-works h1 {
+    font-size: 1rem;
+  }
+  .how-it-works .heel-info h1,
+  .how-it-works .front-info h1,
+  .how-it-works .traction-info h1 {
+    font-size: 1rem;
+    text-align: left;
+  }
+  .how-it-works .heel-info p,
+  .how-it-works .front-info p,
+  .how-it-works .traction-info p {
+    font-size: 10px;
+  }
+  .how-it-works .heel-info img,
+  .how-it-works .front-info img,
+  .how-it-works .traction-info img {
+    max-width: 60%;
+  }
+
+  .how-it-works .heel-info img {
+    transform: translate(-20%, 0%) rotate(60deg);
+  }
+  .how-it-works .front-info {
+    top: 30px;
+    right: 0px;
+  }
+
+  .how-it-works .front-info img {
+    transform: translate(0%, 185%) rotate(130deg);
+  }
+  .how-it-works .traction-info {
+    bottom: 5px;
+    left: 10%;
+  }
+  .how-it-works .traction-info img {
+    transform: translate(60%, 60%);
+  }
+}
+
+@media (max-width: 330px) {
+  .hero {
+    max-height: 70vh;
+    padding-bottom: 200px;
+    background-position-y: 100%;
+  }
+  .hero-container h1 {
+    font-size: 2.5rem;
+    padding-left: 30px;
+  }
+  /* how it works */
+  .how-it-works {
+    display: none;
+  }
+  .how-it-works-md {
+    display: block;
+    max-width: 330px;
+  }
+  .how-it-works-md img {
+    width: 100%;
+  }
+}
