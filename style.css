@@ -3,6 +3,9 @@
   /* box-sizing: border-box; */
   font-family: "Nunito Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: rgba(0, 0, 0, 0.979);
@@ -16,7 +19,12 @@ header,
 section {
   padding-inline: 20px;
 }
-
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
 .logo-container {
   max-width: 110px;
 }
@@ -46,13 +54,16 @@ section {
 .navbar .nav a + a {
   margin-left: 20px;
 }
-
+.md-nav {
+  display: none;
+}
 .navbar .hamburger-menu {
   color: inherit;
   background-color: inherit;
   outline: none;
   border: none;
   font-size: 36px;
+  cursor: pointer;
   display: none;
 }
 
@@ -69,6 +80,7 @@ section {
   font-family: "New Amsterdam", sans-serif;
 }
 .hero {
+  scroll-margin-top: 100px;
   margin-top: -100px;
   padding-top: 100px;
   /* padding-bottom: 100px; */
@@ -91,8 +103,10 @@ section {
 /* How it works */
 .how-it-works {
   display: block;
+  scroll-margin-top: 100px;
 }
 .how-it-works-md {
+  scroll-margin-top: 100px;
   display: none;
 }
 .how-it-works {
@@ -145,7 +159,7 @@ section {
 
 .how-it-works .front-info {
   top: 5%;
-  right: calc(100vw - 94%);
+  right: 10%;
 }
 
 .how-it-works .front-info img {
@@ -159,6 +173,151 @@ section {
 .how-it-works .traction-info img {
   transform: translate(40%, 40%);
 }
+
+/* about us */
+.about-container {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  scroll-margin-top: 100px;
+}
+
+.about-shoe {
+  flex-shrink: 0;
+  background-image: url(./images/aboutus-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 600px;
+  overflow: hidden;
+}
+.about-shoe img {
+  width: 100%;
+  max-height: 100vh;
+  margin-inline: 30px;
+}
+.about-us {
+  max-width: 500px;
+  padding-inline: 40px;
+}
+.about-container h1 {
+  display: none;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.about-us h1 {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.about-us p {
+  font-size: 1rem;
+  padding-block: 12px;
+}
+
+/* Testimonials */
+
+.testimonials {
+  margin-block: 20px;
+  background-image: url(./images/testimonial-bg.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 100px;
+}
+
+.testimonials h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.testimonials .persons-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  margin-block: 20px;
+}
+
+.persons-container .person {
+  max-width: 200px;
+}
+
+.persons-container .person .photo-container {
+  max-width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline: auto;
+}
+.photo-container img {
+  width: 100%;
+}
+
+.person p {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* footer */
+#contact-us {
+  display: flex;
+  flex-direction: row;
+  margin-block: 20px;
+  justify-content: space-between;
+  align-items: center;
+  scroll-margin-top: 100px;
+}
+.contact {
+  margin-left: 60px;
+  margin-right: 20px;
+}
+
+.contact h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.contact p {
+  margin-bottom: 10px;
+  max-width: 150px;
+  font-size: 1rem;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.icon-container img {
+  max-width: 30px;
+}
+
+.map {
+  max-height: 600px;
+}
+
+/* made by */
+.made-by {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 400px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-img {
+  max-width: 80px;
+}
+
+.footer-img img {
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .navbar .nav a {
     font-size: 24px;
@@ -201,12 +360,71 @@ section {
   }
 }
 
+@media (max-width: 900px) {
+  /* about */
+  .about-shoe img {
+    width: 100%;
+    max-height: 80vh;
+    margin-inline: 30px;
+  }
+  .about-us h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .about-us p {
+    font-size: 12px;
+    padding-block: 12px;
+  }
+
+  /* footer */
+  .contact {
+    margin-left: 30px;
+  }
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  iframe {
+    max-width: 400px;
+  }
+}
+
 @media (max-width: 770px) {
   .navbar .nav {
     display: none;
   }
+  .navbar .md-nav {
+    position: absolute;
+    background-color: #f8f3f320;
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    top: 30px;
+    right: 20px;
+    z-index: 0;
+    display: none;
+    cursor: pointer;
+  }
+  .md-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+  }
+  .md-nav a + a {
+    padding-top: 5px;
+  }
+
+  .md-nav .cross {
+    outline: none;
+    border: none;
+    text-align: right;
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+  }
   .navbar .hamburger-menu {
-    display: block;
+    display: flex;
   }
 
   .hero {
@@ -250,6 +468,72 @@ section {
 
   .how-it-works .front-info img {
     transform: translate(-20%, 175%) rotate(130deg);
+  }
+
+  /* testimonial */
+  .testimonials h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 700px) {
+  /* about us */
+  .about-container {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-shoe img {
+    width: 100%;
+    max-height: 80vh;
+    margin-inline: 30px;
+  }
+  .about-us {
+    max-width: 500px;
+    padding-inline: 40px;
+  }
+  .about-container h1 {
+    display: flex;
+  }
+  .about-us h1 {
+    display: none;
+  }
+  .about-us p {
+    font-size: 12px;
+    max-width: 400px;
+    padding-block: 12px;
+  }
+  .about-us p:nth-child(odd) {
+    display: none;
+  }
+  /* testimonial */
+  .testimonials h1 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+
+  .persons-container .person {
+    max-width: 100px;
+  }
+  .person p {
+    font-size: 10px;
+  }
+  /* footer */
+  #contact-us {
+    flex-direction: column;
+  }
+  .contact {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  iframe {
+    max-width: 400px;
   }
 }
 
@@ -298,6 +582,28 @@ section {
   }
   .how-it-works .traction-info img {
     transform: translate(60%, 50%);
+  }
+  /* testimonial */
+  .testimonials .persons-container {
+    flex-direction: column;
+    margin-inline: auto;
+  }
+  .testimonials h1 {
+    font-size: 1rem;
+  }
+
+  .persons-container .person {
+    max-width: 200px;
+    margin-top: 10px;
+  }
+  .person p {
+    font-size: 10px;
+  }
+
+  /* footer */
+
+  iframe {
+    max-width: 300px;
   }
 }
 @media (max-width: 376px) {
@@ -349,6 +655,12 @@ section {
   .how-it-works .traction-info img {
     transform: translate(60%, 60%);
   }
+  /* footer */
+
+  iframe {
+    max-width: 250px;
+    max-height: 400px;
+  }
 }
 
 @media (max-width: 330px) {
@@ -371,5 +683,9 @@ section {
   }
   .how-it-works-md img {
     width: 100%;
+  }
+  iframe {
+    max-width: 200px;
+    max-height: 300px;
   }
 }
