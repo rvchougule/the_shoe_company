@@ -20,7 +20,7 @@ link.forEach((el) => {
   });
 });
 
-document.addEventListener("resize", () => {
+window.addEventListener("resize", () => {
   if (window.innerWidth > 770) {
     hamburgerIcon.style.display = "none";
   } else {
